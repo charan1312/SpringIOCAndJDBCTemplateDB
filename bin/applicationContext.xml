@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="stubean" class="com.javatpoint.Student">
+		<!-- <property name="name" value="Charan Thej Aware"></property> -->
+	</bean>
+
+	<bean id="empbean" class="com.javatpoint.Employee">
+		<!-- <property name="name" value="Charan Thej Aware"></property> -->
+		<constructor-arg value="10" type="int"></constructor-arg>
+		<constructor-arg value="Charan Thej Aware"></constructor-arg>
+	</bean>
+
+	<bean id="addressbean" class="com.javatpoint.Address">
+		<constructor-arg value="Renigunta"></constructor-arg>
+		<constructor-arg value="AP"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="empwithaddbean" class="com.javatpoint.EmployeeWithAddress">
+		<constructor-arg value="162304" type="int"></constructor-arg>
+		<constructor-arg value="Aware Charan"></constructor-arg>
+		<constructor-arg>
+			<ref bean="addressbean" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="questionlistbean" class="com.javatpoint.QuestionWithList">
+		<constructor-arg value="32" type="int"></constructor-arg>
+		<constructor-arg value="What is Java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a pgming lang</value>
+				<value>Java is a platform</value>
+				<value>Java is an Island</value>
+				<value>Java is a platform</value>
+				<value>Java is a platform</value>
+				<value>Java is a platform</value>
+				<value>Java is an Island</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="questionsetbean" class="com.javatpoint.QuestionWithSet">
+		<constructor-arg value="32" type="int"></constructor-arg>
+		<constructor-arg value="What is Java?"></constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>Java is a pgming lang</value>
+				<value>Java is a platform</value>
+				<value>Java is an Island</value>
+				<value>Java is a platform</value>
+				<value>Java is a platform</value>
+				<value>Java is a platform</value>
+				<value>Java is an Island</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+
+<!-- 	<bean id="ans1" class="com.javatpoint.Answer"> -->
+<!-- 		<constructor-arg value="1"></constructor-arg> -->
+<!-- 		<constructor-arg value="Java is a programming language"></constructor-arg> -->
+<!-- 		<constructor-arg value="John"></constructor-arg> -->
+<!-- 	</bean> -->
+
+	<bean id="ans2" class="com.javatpoint.Answer">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Java is a Platform"></constructor-arg>
+		<constructor-arg value="Ravi"></constructor-arg>
+	</bean>
+
+	<bean id="q" class="com.javatpoint.QuestionWithListOfAnswerObject">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="ans1" />
+				<ref bean="ans2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="qmap" class="com.javatpoint.QuestionWithMap">
+		<constructor-arg value="11"></constructor-arg>
+		<constructor-arg value="What is Java?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="Java is a Programming Language" value="Ajay Kumar"></entry>
+				<entry key="Java is a Platform" value="John Smith"></entry>
+				<entry key="Java is an Island" value="Raj Kumar"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
